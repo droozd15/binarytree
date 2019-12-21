@@ -22,7 +22,7 @@ namespace BinaryTree
         {
             Tree tree = new Tree();
             tree.Add(2);
-            Assert.AreEqual(tree.Root, 2);
+            Assert.AreEqual(tree.Root.data, 2);
         }
     }
 }

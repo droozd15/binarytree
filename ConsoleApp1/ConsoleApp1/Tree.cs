@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    public enum Side
-    {
-        Left,
-        Right
-    }
-
     class Tree
     {
-        public int Root;
+        public Node Root;
 
         public Tree()
         {
 
         }
 
-        public void Add(int node)
+        public void Add(int data)
         {
-           
-            Root = node;
+
+            if (Root == null)
+            {
+                Node node = new Node(data);
+                Root = node;
+            }
            
         }
     }
