@@ -15,22 +15,29 @@ namespace BinaryTree
 
         }
 
-        public void Add(int data)
+        public void Add(int data, Node curentNode)
         {
 
             if (Root == null)
             {
                 Node node = new Node(data);
                 Root = node;
+                return;
             }
            
-            if (Root.data > data)
+            if (curentNode.data < data)
             {
-                Root.RightNode = new Node(data);
+                if (curentNode.RightNode == null)
+                    curentNode.RightNode = new Node(data);
+                else
+                    Add(data, curentNode.RightNode);
             }
-            else if (Root.data < data)
+            else if (curentNode.data > data)
             {
-                Root.LeftNode = new Node(data);
+                if (curentNode.LeftNode == null)
+                    curentNode.LeftNode = new Node(data);
+                else
+                    Add(data, curentNode.LeftNode);
             }
         }
     }

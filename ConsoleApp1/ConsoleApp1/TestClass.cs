@@ -21,10 +21,10 @@ namespace BinaryTree
         public void CanAddValue()
         {
             Tree tree = new Tree();
-            tree.Add(2);
+            tree.Add(2, tree.Root);
             Assert.AreEqual(tree.Root.data, 2);
-            tree.Add(1);
-            tree.Add(3);
+            tree.Add(1, tree.Root);
+            tree.Add(3, tree.Root);
         }
     }
 }
