@@ -23,6 +23,8 @@ namespace BinaryTree
             Tree tree = new Tree();
             tree.Add(2);
             Assert.AreEqual(tree.Root.data, 2);
+            tree.Add(1);
+            tree.Add(3);
         }
     }
 }

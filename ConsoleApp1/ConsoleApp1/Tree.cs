@@ -24,6 +24,14 @@ namespace BinaryTree
                 Root = node;
             }
            
+            if (Root.data > data)
+            {
+                Root.RightNode = new Node(data);
+            }
+            else if (Root.data < data)
+            {
+                Root.LeftNode = new Node(data);
+            }
         }
     }
 }
