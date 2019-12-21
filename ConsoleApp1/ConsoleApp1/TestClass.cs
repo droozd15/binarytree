@@ -41,5 +41,26 @@ namespace BinaryTree
             Assert.AreEqual(true, tree.Search(1, tree.Root));
             Assert.AreEqual(false, tree.Search(47, tree.Root));
         }
+        [Test]
+        public void CanDeleteList()
+        {
+            Tree tree = new Tree();
+            tree.Add(20, tree.Root);
+
+            tree.Add(15, tree.Root);
+            tree.Add(30, tree.Root);
+            tree.Add(10, tree.Root);
+            tree.Add(50, tree.Root);
+            tree.Add(16, tree.Root);
+            tree.Add(49, tree.Root);
+            tree.Add(18, tree.Root);
+            tree.Add(38, tree.Root);
+            tree.Add(24, tree.Root);
+
+            tree.Delete(24, tree.Root);
+            Assert.AreEqual(false, tree.Search(24, tree.Root));
+            //Assert.AreEqual(true, tree.Search(1, tree.Root));
+            //Assert.AreEqual(false, tree.Search(47, tree.Root));
+        }
     }
 }

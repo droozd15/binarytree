@@ -20,10 +20,12 @@ namespace BinaryTree
             LeftNode = null;
             RightNode = null;
         }
+        
         public Node LeftNode { get; set; }
 
         public Node RightNode { get; set; }
 
+        public Node ParentNode { get; set; }
 
     }
 }
