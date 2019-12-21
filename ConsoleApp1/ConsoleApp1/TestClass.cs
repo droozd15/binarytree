@@ -13,8 +13,9 @@ namespace BinaryTree
         [Test]
         public void CanCreateTree()
         {
-            Tree tree = new Tree(1);
+            Tree tree = new Tree();
             Assert.NotNull(tree);
         }
+
     }
 }

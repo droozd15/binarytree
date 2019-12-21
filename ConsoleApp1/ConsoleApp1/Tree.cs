@@ -16,9 +16,9 @@ namespace BinaryTree
     {
         public int data;
 
-        public Tree (int _data)
+        public Tree ()
         {
-            data = _data;
+
         }
     }
 }
