@@ -14,11 +14,18 @@ namespace BinaryTree
 
     class Tree
     {
-        public int data;
+        public int Root;
 
-        public Tree ()
+        public Tree()
         {
 
+        }
+
+        public void Add(int node)
+        {
+           
+            Root = node;
+           
         }
     }
 }

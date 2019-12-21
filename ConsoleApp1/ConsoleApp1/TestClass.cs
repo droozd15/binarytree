@@ -17,5 +17,12 @@ namespace BinaryTree
             Assert.NotNull(tree);
         }
 
+        [Test]
+        public void CanAddValue()
+        {
+            Tree tree = new Tree();
+            tree.Add(2);
+            Assert.AreEqual(tree.Root, 2);
+        }
     }
 }
