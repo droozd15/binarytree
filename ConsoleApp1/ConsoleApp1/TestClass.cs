@@ -26,5 +26,20 @@ namespace BinaryTree
             tree.Add(1, tree.Root);
             tree.Add(3, tree.Root);
         }
+        [Test]
+        public void CanSearchValue()
+        {
+            Tree tree = new Tree();
+            tree.Add(20, tree.Root);
+
+            tree.Add(10, tree.Root);
+            tree.Add(30, tree.Root);
+            tree.Add(1, tree.Root);
+            tree.Add(38, tree.Root);
+
+            Assert.AreEqual(true, tree.Search(38, tree.Root));
+            Assert.AreEqual(true, tree.Search(1, tree.Root));
+            Assert.AreEqual(false, tree.Search(47, tree.Root));
+        }
     }
 }

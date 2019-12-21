@@ -40,5 +40,18 @@ namespace BinaryTree
                     Add(data, curentNode.LeftNode);
             }
         }
+
+        public bool Search(int data, Node curentNode)
+        {
+            if (curentNode == null)
+                return false;
+            if (curentNode.data == data)
+                return true;
+            else if (curentNode.data > data)
+                return Search(data, curentNode.LeftNode);
+            else if (curentNode.data < data)
+                return Search(data, curentNode.RightNode);
+            return false;
+        }
     }
 }
