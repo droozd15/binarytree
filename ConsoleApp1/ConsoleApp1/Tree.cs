@@ -55,9 +55,8 @@ namespace BinaryTree
                 return true;
             else if (curentNode.data > data)
                 return Search(data, curentNode.LeftNode);
-            else if (curentNode.data < data)
+            else //if (curentNode.data < data)
                 return Search(data, curentNode.RightNode);
-            return false;
         }
         public Node Next (Node currentNode)
         {
@@ -65,8 +64,6 @@ namespace BinaryTree
         }
         public Node SearchMin(Node currentNode)
         {
-            if (currentNode == null)
-                return null;
             if (currentNode.LeftNode == null)
                 return currentNode;
             else return SearchMin(currentNode.LeftNode);
@@ -87,9 +84,16 @@ namespace BinaryTree
                 } else if (currentNode.LeftNode == null)
                 {
                     if (currentNode.ParentNode.data > currentNode.data)
+                    {
                         currentNode.ParentNode.LeftNode = currentNode.RightNode;
+                        currentNode.ParentNode.LeftNode.ParentNode = currentNode.ParentNode;
+                    }
                     else
+                    { 
                         currentNode.ParentNode.RightNode = currentNode.RightNode;
+                        currentNode.ParentNode.RightNode.ParentNode = currentNode.ParentNode;
+
+                    }
                     return true;
                 }
                 else if (currentNode.RightNode == null)
@@ -101,10 +105,20 @@ namespace BinaryTree
                     return true;
                 } else
                 {
-                    currentNode = Next(currentNode);
-                }
-
-                return true;
+                    if (currentNode.ParentNode.data > currentNode.data)
+                    {
+                        int t = Next(currentNode).data;
+                        Delete(t, currentNode);
+                        currentNode.ParentNode.LeftNode.data = t;
+                    }
+                    else
+                    {
+                        int t = Next(currentNode).data;
+                        Delete(t, currentNode);
+                        currentNode.ParentNode.RightNode.data = t;
+                    }
+                    return true;
+                }               
             }
             if (currentNode.data > data) 
                 return Delete(data, currentNode.LeftNode);

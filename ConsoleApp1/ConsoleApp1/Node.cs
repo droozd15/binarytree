@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    public enum Side
-    {
-        Left,
-        Right
-    }
+   
     class Node
     {
         public int data;
